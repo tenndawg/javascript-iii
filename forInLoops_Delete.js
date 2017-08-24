@@ -7,23 +7,23 @@
 
 // In the example below, we are accessing the property values. Uncomment the code below, run it and look at what prints in the console.
 
-// var values = {
-//   one: 'These',
-//   two: ' are',
-//   three: ' the',
-//   four: ' property',
-//   five: ' values.'
-// } 
+ var values = {
+   one: 'These',
+   two: ' are',
+   three: ' the',
+   four: ' property',
+   five: ' values.'
+ } 
 
-// for(var key in values) {
-//   console.log(values[key])
-// }
+ for(var key in values) {
+   console.log(values[key])
+ }
 
 // In this next example, we are accessing the property names themselves. Uncomment the code below, run it and look at what prints in the console.
 
-// for(var key in values) {
-//   console.log(key)
-// }
+ for(var key in values) {
+   console.log(key)
+ }
 
 
 // ========================
@@ -32,7 +32,10 @@
 // Inside the function showValues, write a for in loop that concatenates each of the property values and returns the concatenated string.
 
 function showValues( obj ) {
-  // CODE HERE
+  for (var key in obj) {
+    console.log("".concat(obj[key]));  
+  }
+  return obj;
 }
 
 
@@ -41,7 +44,14 @@ function showValues( obj ) {
 
 // Write a function called greaterThan10 that takes in an object. Write a for in loop that loops over the object and changes any value that is great than 10 to 0. Return the updated object.
 
-// CODE HERE
+function greaterThan10(obj) {
+	for (var key in obj) {
+		if (obj[key] > 10) {
+			obj[key] = obj[key]+ 10);
+		}
+	}
+	return obj;
+}
 
 
 
@@ -50,7 +60,12 @@ function showValues( obj ) {
 
 // Write a function called double that takes in an object. Write a for in loop that loops over the object and changes every value to be itself multipled by 2. Return the updated object.
 
-// CODE HERE
+function double(obj) {
+	for (var key in obj) {
+		obj[key] * 2;
+	}
+	return obj;
+}
 
 
 
