@@ -38,7 +38,16 @@ var employees = [{
 
 // Code here
 
-
+function employeeUpdater(arr) {
+	for (var i = 0; i < arr.length; i++) {
+		if (i === "Theo") {
+		delete arr[i];
+		} else if (i === "Lorie") {
+			arr.department = "HR";
+		}
+	}
+	return arr;
+}
 
 
 
@@ -56,9 +65,20 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 
 // Code here
 
+function eliminateDuplicates(arr) {
+  var i,
+      len=arr.length,
+      out=[],
+      obj={};
 
-
-
+  for (i=0;i<len;i++) {
+    obj[arr[i]]=0;
+  }
+  for (i in obj) {
+    out.push(i);
+  }
+  return out;
+}
 
 
 
@@ -84,8 +104,10 @@ var cat = {
 
 // Code here
 
-var grumpyActivity;
-var fluffy2ndFriend;
+
+
+var grumpyActivity = cat.activities[1];
+var fluffy2ndFriend = cat.name;
 
 
 
