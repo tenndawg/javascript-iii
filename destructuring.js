@@ -23,7 +23,7 @@ var {color, make, model, year} = carDetails;
 function greeting( obj ) {
   // CODE HERE
 
-  var {firstName, lastName, title} = greeting;
+  var {firstName, lastName, title} = obj;
 
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
 }

@@ -38,16 +38,30 @@ var employees = [{
 
 // Code here
 
-function employeeUpdater(arr) {
-	for (var i = 0; i < arr.length; i++) {
-		if (i === "Theo") {
-		delete arr[i];
-		} else if (i === "Lorie") {
-			arr.department = "HR";
-		}
-	}
-	return arr;
+function employeeUpdater() {
+  for(var i = employees.length - 1; i > -1; i--) {
+    if(employees[i].firstName === "Theo") {
+      employees.splice(i, 1);
+      console.log(employees);
+    } else if (employees[i].firstName === "Lorie") {
+      employees[i].department = "HR";
+    }
+  }
+  return employees;
 }
+
+employeeUpdater(employees);
+
+// function employeeUpdater(arr) {
+// 	for (var i = 0; i < arr.length; i++) {
+// 		if (i === "Theo") {
+// 		delete arr[i];
+// 		} else if (i === "Lorie") {
+// 			arr.department = "HR";
+// 		}
+// 	}
+// 	return arr;
+// }
 
 
 
@@ -65,20 +79,30 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 
 // Code here
 
-function eliminateDuplicates(arr) {
-  var i,
-      len=arr.length,
-      out=[],
-      obj={};
-
-  for (i=0;i<len;i++) {
-    obj[arr[i]]=0;
+function removeDuplicates() {
+  var returnedArr = [];
+  for(var i=0; i < workplaceAccidents.length; i++) {
+    if(returnedArr.indexOf(workplaceAccidents[i]) === -1) {
+      returnedArr.push(workplaceAccidents[i]);
+    }
   }
-  for (i in obj) {
-    out.push(i);
-  }
-  return out;
+  return returnedArr;
 }
+
+// function removeDuplicates(workplaceAccidents) {
+//   var i,
+//       len=workplaceAccidents.length,
+//       out=[],
+//       obj={};
+
+//   for (i=0;i<len;i++) {
+//     obj[workplaceAccidents[i]]=0;
+//   }
+//   for (i in obj) {
+//     out.push(i);
+//   }
+//   return out;
+// }
 
 
 
@@ -106,8 +130,8 @@ var cat = {
 
 
 
-var grumpyActivity = cat.activities[1];
-var fluffy2ndFriend = cat.name;
+var grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend = cat.catFriends[1].name;
 
 
 
@@ -146,7 +170,14 @@ var myCar = {
 
 // Code here
 
-
+function recordCleaner() {
+  for (var i = 0; i < myCar.accidents.length; i++) {
+    if (myCar.accidents[i].atFaultForAccident === true) {
+      myCar.accidents[i].atFaultForAccident = false;
+    }
+  }
+  return myCar;
+}
 
 
 
@@ -165,6 +196,17 @@ var myCar = {
 
 var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 
-
+function looper() {
+  for (var i = 0; i < numsArr.length; i++) {
+    for(var j = 0; j < numsArr[i].length; j++) {
+      if (numsArr[i][j] % 2 === 0) {
+        numsArr[i][j] = "even";
+        } else if(numsArr[i][j] % 2 !== 0) {
+          numsArr[i][j] = "odd";
+        }
+    }
+  }
+  return numsArr;
+}
 
 
