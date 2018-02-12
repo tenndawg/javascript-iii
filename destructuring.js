@@ -36,6 +36,14 @@ function greeting( obj ) {
 
   // CODE HERE
 
+function totalPopulation(obj) {
+  var {utah: a, california: b, texas: c, arizona: d} = obj;
+
+  var total = a+b+c+d;
+
+  return total;
+
+}
 
 // ========================
 
@@ -44,6 +52,13 @@ function greeting( obj ) {
 
   // CODE HERE
 
+function ingredients(obj) {
+  var {carb: a, fat: b, protein: c} = obj;
+
+  var newArr = [a, b, c];
+
+  return newArr;
+}
 
 // ========================
 
@@ -58,6 +73,17 @@ function greeting( obj ) {
 
   // CODE HERE
 
+function largeNumbers({first: a, second: b, third: c}) {
+  
+  if (a < b && c) {
+    return a;
+  } else if (b < a && c) {
+    return b;
+  } else {
+    return c;
+  }
+
+}
 
 // ========================
 
@@ -65,3 +91,25 @@ function greeting( obj ) {
 // Write a function called numberGroups that will take a destructured object as it's parameter. The object properties will be named a, b, and c and their values will be arrays of numbers. Find the longest array and return that array. 
 
   // CODE HERE
+
+function numberGroups({a, b, c}) {
+
+  var long;
+	if (a.length < b.length) {
+		long = b;
+	} else {
+		long = a;
+	}
+	if (long.length < c.length) {
+		long = c;
+	}
+	return long;
+}
+  
+  // if (a.length > b.length && c.length) {
+  //   return a;
+  // } else if (b.length > a.length && c.length) {
+  //   return b;
+  // } else if (c.length > a.length && b.length) {
+  //   return c;
+  // }
