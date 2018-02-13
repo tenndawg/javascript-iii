@@ -80,8 +80,8 @@ function double(obj) {
 function secrets(obj) {
   var nada = '';
   for (var key in obj) {
-    if (key == 'sh') {
-      nada.push(obj[key]);
+    if ((/sh/).test(key)) {
+      nada += obj[key];
     }
   }
   return nada;
@@ -111,7 +111,10 @@ function secrets(obj) {
 
 // CODE HERE
 
-
+function removePassword(obj) {
+    delete obj.password;
+    return obj;
+  }
 
 // ========================
 
@@ -127,6 +130,11 @@ var deleteTheBigNumbers = {
 
 // CODE HERE
 
+for (var key in deleteTheBigNumbers) {
+  if (deleteTheBigNumbers[key] > 100) {
+    delete deleteTheBigNumbers[key];
+  }
+}
 
 // ========================
 
@@ -135,7 +143,14 @@ var deleteTheBigNumbers = {
 
 // CODE HERE
 
-
+function startsWithK(obj) {
+  for (var key in obj) {
+    if (key[0] === 'k') {
+      delete obj[key];
+    }
+  }
+  return obj;
+}
 
 // ========================
 
@@ -144,3 +159,12 @@ var deleteTheBigNumbers = {
 // (hint: the method includes() may be of use...)
 
 // CODE HERE
+
+function hiddenTreasure(obj) {
+  for (var key in obj) {
+    if (!obj[key].includes('treasure')) {
+      delete obj[key];
+    }
+  }
+  return obj;
+}
